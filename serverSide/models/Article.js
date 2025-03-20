@@ -12,7 +12,7 @@ const articleSchema = new Schema(
     category: { type: String, enum: ["صحي", "سياسي", "زراعي"], required: true },
     tags: [String],
     publishedDate: { type: Date, default: Date.now },
-
+    
     paragraph1: { type: String, required: true },
     paragraph2: { type: String, required: true },
     paragraph3Title: { type: String },
@@ -33,5 +33,10 @@ const articleSchema = new Schema(
   },
   { timestamps: true }
 );
+
+
+//articleSchema.index({ title: 1 }); 
+
+
 
 module.exports = mongoose.model("Article", articleSchema);
